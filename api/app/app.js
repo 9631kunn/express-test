@@ -5,11 +5,8 @@ const bodyParser = require("body-parser"); // HTMLのform受け取りを簡単�
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/api/v1/", (req, res) => {
-  res.json({
-    message: "HELLO EXPRESS",
-  });
-});
+const router = require("./models/route/v1");
+app.use("/api/v1", router);
 
 app.listen(3000);
 console.log("STARTED");
