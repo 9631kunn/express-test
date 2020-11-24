@@ -30,6 +30,12 @@ const photoList = [
 //   res.json(photoList);
 // });
 
+app.set("view engine", "ejs");
+
+app.get("/", (req, res, next) => {
+  res.render("index", {});
+});
+
 app.get("/api/photo/:photoId", (req, res, next) => {
   let photo;
   for (i = 0; i < photoList.length; i++) {

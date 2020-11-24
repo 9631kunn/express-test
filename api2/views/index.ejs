@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HELLO EXPRESS</title>
+</head>
+<body>
+  <h1>HELLO EXPRESS</h1>
+  <script>
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "/api/photo/list");
+    xhr.addEventListener("load", (e) => {
+      const photoList = JSON.parse(xhr.responseText || null);
+      console.log(photoList);
+    });
+    xhr.send()
+  </script>
+</body>
+</html>
