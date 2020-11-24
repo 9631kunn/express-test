@@ -26,6 +26,23 @@ const photoList = [
   },
 ];
 
-app.get("/api/photo/list", (req, res, next) => {
-  res.json(photoList);
+// app.get("/api/photo/list", (req, res, next) => {
+//   res.json(photoList);
+// });
+
+app.get("/api/photo/:photoId", (req, res, next) => {
+  let photo;
+  for (i = 0; i < photoList.length; i++) {
+    if (photoList[i].id == req.params.photoId) {
+      photo = photoList[i];
+    }
+  }
+  res.json(photo);
 });
+
+/*
+letは再「宣言」不可
+let hoge = 0;
+hoge = 1; <= OK!
+let hoge = 2; <= NG!
+*/
