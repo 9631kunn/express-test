@@ -15,9 +15,7 @@
   </ul>
   <h2>Foods</h2>
   <ul>
-    <% for (let food of foods) { %>
-    <li><%= food.name %></li>
-    <% } %>
+    <%- include("./components/list.ejs", foods) %>
   </ul>
   <h2>Animals</h2>
   <ul>
